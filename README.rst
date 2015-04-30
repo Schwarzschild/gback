@@ -10,10 +10,12 @@ Examples
 
 List calendar names:
 
+```python
     from gback import GCalSession
     session = GCalSession('~/gback.oauth')
 
     for c in session.names: print c
+```
 
 Add an appointment to a named calendar:
 
