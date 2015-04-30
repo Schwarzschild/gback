@@ -16,29 +16,29 @@ List calendar names::
     >>> for c in session.names: print c
 
 
-Add an appointment to a named calendar:
+Add an appointment to a named calendar::
 
 
 
-    from gback import GCalSession
+    >>> from gback import GCalSession
 
-    # print the output will display the appiointment url.
-    # 'Marc' is the name of the calendar used.
+    >>> # print the output will display the appiointment url.
+    >>> # 'Marc' is the name of the calendar used.
 
-    session = GCalSession('~/gback.oauth')
-    des='Write a simpler way to use the google calendar api.'
-    print session['Marc'].add('Write Python code.', '20150430', des=des)
+    >>> session = GCalSession('~/gback.oauth')
+    >>> des='Write a simpler way to use the google calendar api.'
+    >>> print session['Marc'].add('Write Python code.', '20150430', des=des)
 
 
 
-Create an ical file for all the appointments in the named calendar.
+Create an ical file for all the appointments in the named calendar::
 
-    from gback import GCalSession
+    >>> from gback import GCalSession
 
-    cal_name = 'Marc'
-    session = GCalSession('~/gback.oauth')
-    with open(cal_name + '.ical'), 'w') as fh:
-        fh.write(session[cal_name].events)
+    >>> cal_name = 'Marc'
+    >>> session = GCalSession('~/gback.oauth')
+    >>> with open(cal_name + '.ical'), 'w') as fh:
+    >>>   fh.write(session[cal_name].events)
 
 Setting up the project on Google
 --------------------------------
