@@ -7,6 +7,9 @@ the google-api-python-client python package and OAuth.
 
 Examples
 --------
+Note: See the "Setting up the project on Google" section below before trying
+the examples.
+
 
 List calendar names::
 
