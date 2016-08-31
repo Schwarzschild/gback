@@ -39,7 +39,7 @@ __doc__ = '''
 '''
 
 __program__ = 'gback'
-__version__ = 'v0.5'
+__version__ = 'v0.52'
 __author__ = 'Marc Schwarzschild'
 
 import sys
@@ -51,7 +51,7 @@ import json
 from apiclient.discovery import build
 from oauth2client.file import Storage
 from oauth2client.client import OAuth2WebServerFlow
-from oauth2client.tools import run
+from oauth2client.tools import run_flow
 from icalendar import Calendar, Event
 
 def Version():
@@ -205,7 +205,7 @@ class GCalSession(object):
                         redirect_uri='urn:ietf:wg:oauth:2.0:oob',
                         euser_agent=__program__+'/'+__version__)
 
-      credentials = run(flow, storage)
+      credentials = run_flow(flow, storage)
     authHttp = credentials.authorize(httplib2.Http())
 
     self.service = build(serviceName='calendar', version='v3', http=authHttp)
